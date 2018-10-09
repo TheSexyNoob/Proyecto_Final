@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{832CB189-4ACF-4F75-A9C9-E87A5C1E634F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entities</RootNamespace>
-    <AssemblyName>Entities</AssemblyName>
+    <ProjectGuid>{5C20F48D-A33A-4BA8-8B90-0E99F86E435C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SistemaPaqueo</RootNamespace>
+    <AssemblyName>SistemaPaqueo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,14 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
-    <Compile Include="Automovil.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="Factura.cs" />
-    <Compile Include="Motocicleta.cs" />
-    <Compile Include="Parqueo.cs" />
+    <Compile Include="App_Code\Admin.cs" />
+    <Compile Include="App_Code\Automovil.cs" />
+    <Compile Include="App_Code\Client.cs" />
+    <Compile Include="App_Code\Factura.cs" />
+    <Compile Include="App_Code\Motocicleta.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="App_Code\Parqueo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vehiculo.cs" />
+    <Compile Include="App_Code\Vehiculo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
