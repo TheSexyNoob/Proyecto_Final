@@ -11,7 +11,7 @@ namespace Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Company  { get; set; }
-        public Vehicule vehiculo { get; set; }
+        public Vehicule vehicule { get; set; }
         
 
         public Client(int id, string name, string company)

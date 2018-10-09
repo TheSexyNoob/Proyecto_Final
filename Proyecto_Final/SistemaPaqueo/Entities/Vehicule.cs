@@ -13,7 +13,7 @@ namespace Entities
         public string Colour { get; set; }
         public string Model { get; set; }
         public string Type { get; set; }
-        public string Description { get; set; } // Este será  usado en caso de que el admin vea algún daño notable del vehiculo.
+        public string Description { get; set; } // Este será usado en caso de que el admin vea algún daño notable del vehiculo.
 
         public Vehicule(string licensePlate, string colour, string model, string type, string description)
         {
@@ -26,7 +26,7 @@ namespace Entities
 
         public virtual string GetSummary()
         {
-            return string.Format("El vehiculo placa: {0} es un {1}, color: {2}, modelo: {3}", LicensePlate, Type, Colour, Model);
+            return string.Format("El vehiculo placa: {0} es un {1}, color: {2}, modelo: {3}. Al ingresar se hizo la siguiente anotación: {4}", LicensePlate, Type, Colour, Model, Description);
         }
 
         
