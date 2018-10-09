@@ -40,7 +40,6 @@ namespace Database
         /// <summary>
         /// Metodo que retorna la cadena de conexion.
         /// </summary>
-        /// <returns></returns>
         public MySqlConnection ReturnDBConnection()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
