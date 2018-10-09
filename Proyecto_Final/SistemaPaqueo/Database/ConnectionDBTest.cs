@@ -32,7 +32,7 @@ namespace Database
             builder.UserID = UID;
             builder.Password = Password;
 
-            String connString = builder.ToString();
+            string connString = builder.ToString();
             return connString;
         }
 
