@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\MySql.Data.dll" />
-    <Content Include="ParkingDB.sql" />
     <Content Include="ToDoList.txt" />
   </ItemGroup>
   <ItemGroup>
