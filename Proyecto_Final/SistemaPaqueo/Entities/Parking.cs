@@ -8,13 +8,13 @@ namespace Entities
 {
     class Parking
     {
-        public int Spot { get; set; }
+        public int Field { get; set; }
         public int Fare { get; set; }
         public int IdCode { get; set; }
 
-        public Parking(int spot, int fare, int idCode)
+        public Parking(int field, int fare, int idCode)
         {
-            Spot = spot;
+            Field = field;
             Fare = fare;
             IdCode = idCode;
         }
