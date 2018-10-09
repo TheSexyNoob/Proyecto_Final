@@ -10,11 +10,13 @@ namespace SistemaPaqueo
     {
         public int Cedula { get; set; }
         public string Nombre { get; set; }
+        public string Empresa { get; set; }
 
-        public Cliente(int cedula, string nombre)
+        public Cliente(int cedula, string nombre, string empresa)
         {
             Cedula = cedula;
             Nombre = nombre;
+            Empresa = empresa;
         }
     }
 }
