@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace SistemaPaqueo
 {
-    class Motocicleta:Vehiculo
-
+    public class Motocicleta : Vehiculo
     {
-        public override string GetSummary()
+        public Motocicleta(string placa, string color, string modelo, string tipo, string descpricion) : base(placa, color, modelo, tipo, descpricion)
         {
-            return base.GetSummary();
         }
     }
 }
