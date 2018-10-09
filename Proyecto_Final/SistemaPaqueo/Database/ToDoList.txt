@@ -1,0 +1,6 @@
+﻿Cosas por hacer:
+
+1. Crear la clase donde reciba todos los parametros de la base de datos.
+	Servidor, Base de datos, Usuario, Password.
+2. Crear los servicios donde se tomaran los datos de la base de datos.
+3. Crear una clase que almacenara los resultados de los servicios.
