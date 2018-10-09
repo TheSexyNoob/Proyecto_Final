@@ -9,21 +9,25 @@ namespace Database
 {
     public class ConnectionDBTest
     {
-
+        #region Variables
         private string Server;
         private string Database;
         private string UID;
         private string Password;
         public static MySqlConnection dbConn;
+        #endregion
 
+        #region Builder
         public ConnectionDBTest()
         {
             Server   = "localhost";
-            Database = "";
-            UID      = "";
-            Password = "";
+            Database = "ParkingDB";
+            UID      = "ParkingAdmin";
+            Password = "ParkingAdmin";
         }
+        #endregion
 
+        #region Methods
         public string ReturnDBConnection()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -35,6 +39,6 @@ namespace Database
             string connString = builder.ToString();
             return connString;
         }
-
+        #endregion
     }
 }
