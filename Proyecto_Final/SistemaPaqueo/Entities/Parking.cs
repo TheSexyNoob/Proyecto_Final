@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Parking
+    public class Parking
     {
         public int Field { get; set; }
         public int Fare { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Spot
+    public class Spot
     {
         public int IdSpot { get; set; }
         public bool IsAvailable { get; set; }

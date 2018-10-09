@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Bill
+    public class Bill
     {
         public string LicensePlate { get; set; }
         public string ClientName { get; set; }
