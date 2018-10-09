@@ -25,7 +25,7 @@ namespace SistemaPaqueo
 
         public virtual string GetSummary()
         {
-            //return string.Format("{0}{1}", Placa, Tipo);
+            return string.Format("{0}{1}", Placa, Tipo);
         }
     }
 }
