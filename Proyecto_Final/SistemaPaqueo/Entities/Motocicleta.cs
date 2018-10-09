@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Motocicleta : Vehiculo
+    public class Motocicleta : Vehicule
     {
         public Motocicleta(string placa, string color, string modelo, string tipo, string descpricion) : base(placa, color, modelo, tipo, descpricion)
         {
