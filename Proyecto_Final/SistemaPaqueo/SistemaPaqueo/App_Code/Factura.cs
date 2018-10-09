@@ -23,6 +23,8 @@ namespace SistemaPaqueo
             CodigoAdmin = codigoAdmin;
             Monto = monto;
             Tarifa = tarifa;
+
+            //test
         }
     }
 }
