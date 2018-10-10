@@ -30,8 +30,8 @@ DROP USER IF EXISTS 'ParkingAdmin'@'%';
 -- Create default user
 ---------------------------------------------------------------------
 
-CREATE USER IF NOT EXISTS 'ParkingAdmin'@'%' IDENTIFIED WITH mysql_native_password AS 'ParkingAdmin';
-GRANT USAGE ON *.* TO 'ParkingAdmin'@'%' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+CREATE USER IF NOT EXISTS 'ParkingAdmin'@'%' IDENTIFIED BY 'ParkingAdmin';
+GRANT ALL PRIVILEGES ON *.* TO 'ParkingAdmin'@'%';
 GRANT ALL PRIVILEGES ON `parkingdb`.* TO 'ParkingAdmin'@'%' WITH GRANT OPTION;
 
 ---------------------------------------------------------------------
@@ -61,7 +61,7 @@ CREATE TABLE Admins
 -- Inserts
 ---------------------------------------------------------------------
 
-INSERT INTO Admins (name, flastname, slastname, id, phone, mail) VALUES(N'Diego', N'Rubí', N'Salas', 117250628, 87108548, N'diegoalru@gmail.com');
+INSERT INTO Admins (name, flastname, slastname, id, phone, mail) VALUES(N'Diego', N'RubÃ­', N'Salas', 117250628, 87108548, N'diegoalru@gmail.com');
 
 ---------------------------------------------------------------------
 -- Show tables

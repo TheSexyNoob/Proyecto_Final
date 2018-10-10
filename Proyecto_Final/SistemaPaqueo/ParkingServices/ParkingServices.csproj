@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Database\DLL\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,9 +46,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IParking.cs" />
+    <Compile Include="ParkingServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDB.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{a5ded7e6-5f07-40ad-a43e-640914961e37}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{832cb189-4acf-4f75-a9c9-e87a5c1e634f}</Project>
       <Name>Entities</Name>

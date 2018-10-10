@@ -56,5 +56,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{832CB189-4ACF-4F75-A9C9-E87A5C1E634F}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkingServices\ParkingServices.csproj">
+      <Project>{2bf5d236-83ae-4cfe-9c53-f287306874b4}</Project>
+      <Name>ParkingServices</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
