@@ -39,6 +39,24 @@ namespace ParkingServices
         return admins;
         }
 
+        public Boolean UserChecker(int id, string password)
+        {
+
+             string queryAdmin = "SELECT * FROM admins WHERE id="+id+";";
+            using (MySqlCommand cmd = new MySqlCommand(queryAdmin, SqlConnection))
+            {
+                SqlConnection.Open();
+                var result = cmd.ExecuteReader();
+                
+                if (id == result.GetInt32(4)) return true;
+	     
+                else return false;
+                SqlConnection.Close();
+            }
+
+
+        }
+
         public List<Bill> GetBills()
         {
             throw new NotImplementedException();
