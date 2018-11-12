@@ -14,9 +14,11 @@ namespace Entities
         public int AdminCode { get; set; }
         public int Amount { get; set; }
         public int Fare { get; set; }
+        public Date date {get;}
 
         public Bill(string licensePlate, string clientName, string adminName, int adminCode, int amount, int fare)
         {
+            date = DateTime.Today();
             LicensePlate = licensePlate;
             ClientName = clientName;
             AdminName = adminName;
