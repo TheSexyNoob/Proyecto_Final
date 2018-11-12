@@ -8,7 +8,7 @@ using Microsoft.VisualBasic;
 using Base;
 
 
-namespace WindowsFormsApp3
+namespace GUI
 {
     class Utils
     {
