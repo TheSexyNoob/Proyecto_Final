@@ -1,0 +1,43 @@
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\QR_Reader.exe.config
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\QR_Reader.exe
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\QR_Reader.pdb
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Controls.dll
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Video.dll
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\BarcodeLib.BarcodeReader.dll
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.dll
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Imaging.dll
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Math.dll
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Controls.xml
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Video.xml
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.xml
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Imaging.xml
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Math.xml
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.Properties.Resources.resources
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.csproj.GenerateResource.cache
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.csproj.CoreCompileInputs.cache
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.csproj.CopyComplete
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.exe
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.pdb
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.Form2.resources
+C:\Users\Julio D\source\repos\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.csprojAssemblyReference.cache
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\QR_Reader.exe.config
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\QR_Reader.exe
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\QR_Reader.pdb
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.dll
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Imaging.dll
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Math.dll
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Controls.xml
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Video.xml
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.xml
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Imaging.xml
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\bin\Debug\AForge.Math.xml
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.csprojResolveAssemblyReference.cache
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.Form2.resources
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.Properties.Resources.resources
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.csproj.GenerateResource.Cache
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.csproj.CoreCompileInputs.cache
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.exe
+C:\Users\ulacit\Downloads\WindowsFormsApp2\QR_Reader\obj\Debug\QR_Reader.pdb

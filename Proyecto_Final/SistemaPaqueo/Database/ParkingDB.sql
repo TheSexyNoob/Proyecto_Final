@@ -3,7 +3,7 @@
 --
 -- This script is based on MySQL 5.7.23
 --
--- Last updated: 20180909 (YYYYMMDD)
+-- Last updated: 20181009 (YYYYMMDD)
 --
 -- Diegoalru
 ---------------------------------------------------------------------
@@ -54,6 +54,7 @@ CREATE TABLE Admins
     phone		INT(8)			NOT NULL,
     mail 		NVARCHAR(20)	NOT NULL,
     CONSTRAINT PK_Admin_code	PRIMARY KEY (code),
+    CONSTRAINT UQ_Admin_id      UNIQUE (id),
     CONSTRAINT UQ_Admin_phone   UNIQUE (phone)
 )ENGINE = INNODB;
 
@@ -62,6 +63,7 @@ CREATE TABLE Admins
 ---------------------------------------------------------------------
 
 INSERT INTO Admins (name, flastname, slastname, id, phone, mail) VALUES(N'Diego', N'Rubí', N'Salas', 117250628, 87108548, N'diegoalru@gmail.com');
+INSERT INTO Admins (name, flastname, slastname, id, phone, mail) VALUES(N'Admin', N'lastName', N'lastName', 117250629, 87108549, N'diegoalru@gmail.com');
 
 ---------------------------------------------------------------------
 -- Show tables
