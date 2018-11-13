@@ -11,10 +11,24 @@ namespace ParkingServices
 
         public MySqlConnection SqlConnection = new MySqlConnection(ConnectionDBTest.DbConnString());
 
+        public void RefreshAdminList()
+        {
+            
+        }
+
         public List<Admin> GetAdmins()
         {
             List<Admin> admins = new List<Admin>();
-            string queryAdmin = "SELECT * FROM admins;";
+
+            string queryAdmin = @"SELECT code
+                                ,name
+                                ,flastname
+                                ,slastname
+                                ,id
+                                ,phone
+                                ,mail
+                                FROM admins;";
+
             using (MySqlCommand cmd = new MySqlCommand(queryAdmin, SqlConnection))
             {
                 SqlConnection.Open();
