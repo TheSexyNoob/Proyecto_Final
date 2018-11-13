@@ -46,24 +46,26 @@ USE parkingdb;
 
 CREATE TABLE Admins
 (
-	code 		INT(4)			NOT NULL	AUTO_INCREMENT,
-    name 		NVARCHAR(20)	NOT NULL,
-    flastname	NVARCHAR(20)	NOT NULL,
-    slastname	NVARCHAR(20)	NOT NULL,
-    id			INT(9)			NOT NULL,
-    phone		INT(8)			NOT NULL,
-    mail 		NVARCHAR(20)	NOT NULL,
-    CONSTRAINT PK_Admin_code	PRIMARY KEY (code),
-    CONSTRAINT UQ_Admin_id      UNIQUE (id),
-    CONSTRAINT UQ_Admin_phone   UNIQUE (phone)
+	code 		INT(4)			 NOT NULL	AUTO_INCREMENT,
+    password	NVARCHAR(20)     NOT NULL,
+    name 		NVARCHAR(20)	 NOT NULL,
+    flastname	NVARCHAR(20)	 NOT NULL,
+    slastname	NVARCHAR(20)	 NOT NULL,
+    id			INT(9)			 NOT NULL,
+    phone		INT(8)			 NOT NULL,
+    mail 		NVARCHAR(20)	 NOT NULL,
+    CONSTRAINT PK_Admin_code	 PRIMARY KEY (code),
+    CONSTRAINT NN_Admin_password CHECK  (password IS NOT NULL),
+    CONSTRAINT UQ_Admin_id       UNIQUE (id),
+    CONSTRAINT UQ_Admin_phone    UNIQUE (phone)
 )ENGINE = INNODB;
 
 ---------------------------------------------------------------------
 -- Inserts
 ---------------------------------------------------------------------
 
-INSERT INTO Admins (name, flastname, slastname, id, phone, mail) VALUES(N'Diego', N'Rubí', N'Salas', 117250628, 87108548, N'diegoalru@gmail.com');
-INSERT INTO Admins (name, flastname, slastname, id, phone, mail) VALUES(N'Admin', N'lastName', N'lastName', 117250629, 87108549, N'diegoalru@gmail.com');
+INSERT INTO Admins (password, name, flastname, slastname, id, phone, mail) VALUES(N'qwerty', N'Diego', N'Rubí', N'Salas', 117250628, 87108548, N'diegoalru@gmail.com');
+INSERT INTO Admins (password, name, flastname, slastname, id, phone, mail) VALUES(N'qwerty', N'Admin', N'lastName', N'lastName', 117250629, 87108549, N'diegoalru@gmail.com');
 
 ---------------------------------------------------------------------
 -- Show tables

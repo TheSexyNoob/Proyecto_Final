@@ -53,24 +53,6 @@ namespace ParkingServices
         return admins;
         }
 
-        public Boolean UserChecker(int id, string password)
-        {
-
-             string queryAdmin = "SELECT * FROM admins WHERE id="+id+";";
-            using (MySqlCommand cmd = new MySqlCommand(queryAdmin, SqlConnection))
-            {
-                SqlConnection.Open();
-                var result = cmd.ExecuteReader();
-                
-                if (id == result.GetInt32(4)) return true;
-	     
-                else return false;
-                SqlConnection.Close();
-            }
-
-
-        }
-
         public List<Bill> GetBills()
         {
             throw new NotImplementedException();
@@ -92,15 +74,26 @@ namespace ParkingServices
         }
 
         #region Filters
-        public Admin GetAdminsById(int id)
+        public Boolean AdminChecker(int id, string password)
         {
-            List<Admin> admins = GetAdmins(); 
+            MySqlCommand queryAdmin = new MySqlCommand();
+            queryAdmin.CommandText = @"SELECT id
+                                       ,password
+                                       FROM admin 
+                                       WHERE id = @parametroId AND password = @parametroPassword ;";
+            queryAdmin.Parameters.Add(new MySqlParameter("parametroId", id));
+            queryAdmin.Parameters.Add(new MySqlParameter("parametroPassword", password));
 
-            foreach (var item in admins)
+            using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), SqlConnection))
             {
-                if (item.Id == id) return item;
+                SqlConnection.Open();
+                var result = cmd.ExecuteReader();
+                if (id == result.GetInt32(0) && password == result.GetString(1)) return true;
+                else return false;
+                SqlConnection.Close();
             }
-            return null;
+
+
         }
         #endregion
     }
