@@ -70,5 +70,18 @@ namespace ParkingServices
         {
             throw new NotImplementedException();
         }
+
+        #region Filters
+        public Admin GetAdminsById(int id)
+        {
+            List<Admin> admins = GetAdmins(); 
+
+            foreach (var item in admins)
+            {
+                if (item.Id == id) return item;
+            }
+            return null;
+        }
+        #endregion
     }
 }

@@ -9,10 +9,6 @@ namespace Logic
 {
     public class AdminLogic
     {
-        #region List
-        public List<Admin> admins = new List<Admin>();
-        #endregion
-
         /// <summary>
         /// This helps to check if all data is correct.
         /// </summary>
@@ -66,23 +62,10 @@ namespace Logic
 
             Admin NewAdmin = new Admin(0, AdminName, AdminFLast, AdminSLast, AdminId, AdminPhone, AdminMail);
 
-            admins.Add(NewAdmin);
-
             //Crear metodo para insertarlo a la base de datos.
 
             NewAdmin = null;
         }
-
-        #region Filters
-        public Admin GetById(int id)
-        {
-            foreach (var item in admins)
-            {
-                if (item.Id == id) return item;
-            }
-            return null;
-        }
-        #endregion
 
         #region Validators
         /// <summary>
