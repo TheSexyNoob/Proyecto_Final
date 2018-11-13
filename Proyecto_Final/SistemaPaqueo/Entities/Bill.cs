@@ -14,17 +14,39 @@ namespace Entities
         public int AdminCode { get; set; }
         public int Amount { get; set; }
         public int Fare { get; set; }
-        public Date date {get;}
+        public DateTime date {get;}
 
         public Bill(string licensePlate, string clientName, string adminName, int adminCode, int amount, int fare)
         {
-            date = DateTime.Today();
+            date = DateTime.Now;
             LicensePlate = licensePlate;
             ClientName = clientName;
             AdminName = adminName;
             AdminCode = adminCode;
             Amount = amount;
             Fare = fare;
+        }
+
+        public void VehiculePayment(int placa) {
+
+            Vehicule car = new Vehicule();//Find vehicule
+
+            if (car.InHour.Day == car.OutHour.Day)
+            {
+                int parkinHours =  car.OutHour.Hour - car.InHour.Hour;
+                double subTotal = 600 * parkinHours;
+                double total = subTotal * (1 + 0.13);
+                
+            }
+            else {
+                int extraDays = car.OutHour.Day - car.InHour.Day;
+
+            }
+
+            //Showbill
+            //SafeBillDB
+
+
         }
     }
 }

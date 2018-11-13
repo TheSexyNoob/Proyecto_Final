@@ -15,6 +15,7 @@ namespace Entities
         public int Id { get; set; }
         public int Phone { get; set; }
         public string  Mail { get; set; }
+        public string password { get; set; }
 
         public Admin(int code, string name, string lastName, string secondLastName, int id, int phone, string mail)
         {
