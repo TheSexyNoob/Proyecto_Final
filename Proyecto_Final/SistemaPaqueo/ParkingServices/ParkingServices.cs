@@ -13,7 +13,7 @@ namespace ParkingServices
 
         public void RefreshAdminList()
         {
-            
+
         }
 
         public List<Admin> GetAdmins()
@@ -35,7 +35,7 @@ namespace ParkingServices
                 var result = cmd.ExecuteReader();
                 while (result.Read())
                 {
-                    Admin admin = new Admin (
+                    Admin admin = new Admin(
                         result.GetInt32(0),
                         result.GetString(1),
                         result.GetString(2),
@@ -49,8 +49,8 @@ namespace ParkingServices
                 SqlConnection.Close();
             }
 
-            
-        return admins;
+
+            return admins;
         }
 
         public List<Bill> GetBills()
@@ -84,13 +84,23 @@ namespace ParkingServices
             queryAdmin.Parameters.Add(new MySqlParameter("parametroId", id));
             queryAdmin.Parameters.Add(new MySqlParameter("parametroPassword", password));
 
-            using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), SqlConnection))
+            using (SqlConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
             {
-                SqlConnection.Open();
-                var result = cmd.ExecuteReader();
-                if (id == result.GetInt32(0) && password == result.GetString(1)) return true;
-                else return false;
-                SqlConnection.Close();
+                using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), SqlConnection))
+                {
+                    SqlConnection.Open();
+                    var result = cmd.ExecuteReader();
+                    if (result.Read())
+                    {
+                        if (id == result.GetInt32(0) && password == result.GetString(1))
+                            return true;
+                        else
+                            return false;
+                    }
+
+                    return false;
+
+                }
             }
 
 
