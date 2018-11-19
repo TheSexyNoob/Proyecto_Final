@@ -9,6 +9,19 @@ namespace Entities
 {
     public class Vehicule
     {
+        public Vehicule()
+        {
+        }
+
+        public Vehicule(string licensePlate, string colour, string model, string type, string description)
+        {
+            LicensePlate = licensePlate;
+            Colour = colour;
+            Model = model;
+            Type = type;
+            Description = description;
+        }
+
         public Vehicule(string licensePlate, string colour, string model, string type, DateTime inHour, DateTime outHour, string description)
         {
             LicensePlate = licensePlate;

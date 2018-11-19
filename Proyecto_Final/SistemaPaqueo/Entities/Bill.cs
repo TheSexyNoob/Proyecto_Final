@@ -30,17 +30,18 @@ namespace Entities
         public void VehiculePayment(int placa) {
 
             Vehicule car = new Vehicule();//Find vehicule
+            double subTotal, total;
 
             if (car.InHour.Day == car.OutHour.Day)
             {
                 int parkinHours =  car.OutHour.Hour - car.InHour.Hour;
-                double subTotal = 600 * parkinHours;
-                double total = subTotal * (1 + 0.13);
+                 subTotal = 600 * parkinHours;
+                 total = subTotal * (1 + 0.13);
                 
             }
             else {
                 int extraDays = car.OutHour.Day - car.InHour.Day;
-
+                subTotal = 1+2;
             }
 
             //Showbill
