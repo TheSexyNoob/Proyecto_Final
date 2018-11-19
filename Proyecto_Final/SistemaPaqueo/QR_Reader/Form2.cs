@@ -24,9 +24,9 @@ namespace QR_Reader
         private VideoCaptureDevice WebCam;
         private void Form2_Load(object sender, EventArgs e)
         {
-            //LISTAR DISPOSITIVOS DE ENTRADA DE VIDEO
+             
             User = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            //CARGAR TODOS LOS DISPOSITIVOS AL COMBO
+      
             foreach (FilterInfo x in User)
             {
                 comboBox1.Items.Add(x.Name);
@@ -63,7 +63,14 @@ namespace QR_Reader
                 img.Dispose();
                 if (Info != null && Info.Count()>0)
                 {
-                    listBox1.Items.Add(Info[0]);                }
+                    listBox1.Items.Add(Info[0]);
+                    if (Info[0].IndexOf("1111") != -1)
+                    {
+                        //QUITAR EL CODIGO DE VERIFICACION
+                        Info[0] = Info[0].Replace("1111", "");
+                        listBox1.Items.Add(Info[0]);
+                    }
+                }
             }
         }
     }

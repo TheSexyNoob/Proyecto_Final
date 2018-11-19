@@ -9,10 +9,6 @@ namespace Entities
 {
     public class Vehicule
     {
-        public Vehicule()
-        {
-        }
-
         public Vehicule(string licensePlate, string colour, string model, string type, DateTime inHour, DateTime outHour, string description)
         {
             LicensePlate = licensePlate;
@@ -31,10 +27,6 @@ namespace Entities
         public DateTime InHour{get; set;}
         public DateTime OutHour { get; set; }
         public string Description { get; set; } // Este será usado en caso de que el admin vea algún daño notable del vehiculo.
-
-        
-
-       
 
         public virtual string GetSummary()
         {

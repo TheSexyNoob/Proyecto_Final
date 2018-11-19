@@ -8,7 +8,7 @@ namespace Entities
 {
     public class Motocicleta : Vehicule
     {
-        public Motocicleta(string placa, string color, string modelo, string tipo, string descpricion) : base(placa, color, modelo, tipo, descpricion)
+        public Motocicleta(string licensePlate, string colour, string model, string type, DateTime inHour, DateTime outHour, string description) : base(licensePlate, colour, model, type, inHour, outHour, description)
         {
         }
     }

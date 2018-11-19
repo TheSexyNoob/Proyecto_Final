@@ -16,6 +16,7 @@ namespace Logic
         public void CreateAdmin(Admin adminData)
         {
             string AdminName;
+            string AdminPassword;
             string AdminFLast;
             string AdminSLast;
             int AdminId = adminData.Id;
@@ -23,6 +24,15 @@ namespace Logic
             string AdminMail;
 
             #region Set data.
+            if (ValidateString(adminData.Password))
+            {
+                AdminPassword = adminData.Password;
+            }
+            else
+            {
+                throw new ArgumentException("Password cannot be empty.");
+            }
+
             if (ValidateString(adminData.Name))
             {
                 AdminName = adminData.Name;
@@ -60,7 +70,7 @@ namespace Logic
             }
             #endregion
 
-            Admin NewAdmin = new Admin(0, AdminName, AdminFLast, AdminSLast, AdminId, AdminPhone, AdminMail);
+            Admin NewAdmin = new Admin(0, AdminPassword, AdminName, AdminFLast, AdminSLast, AdminId, AdminPhone, AdminMail);
 
             //Crear metodo para insertarlo a la base de datos.
 

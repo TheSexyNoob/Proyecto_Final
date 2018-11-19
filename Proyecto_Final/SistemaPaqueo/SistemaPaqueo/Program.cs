@@ -14,8 +14,14 @@ namespace SistemaPaqueo
             Console.WriteLine("Bienvenidos");
 
             ParkingServices.ParkingServices parking = new ParkingServices.ParkingServices();
-            parking.GetAdmins();
-
+            //parking.GetAdmins();
+            
+            if (parking.AdminChecker(1, "qwerty"))
+            {
+                Console.Write("Exists \n");
+            }
+            
+            Console.Write("Presione cualquier tecla para salir...");
             Console.ReadKey();
         }
     }

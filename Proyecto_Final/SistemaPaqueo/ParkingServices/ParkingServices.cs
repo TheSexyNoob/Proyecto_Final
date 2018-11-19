@@ -9,48 +9,49 @@ namespace ParkingServices
     public class ParkingServices : IParking
     {
 
-        public MySqlConnection SqlConnection = new MySqlConnection(ConnectionDBTest.DbConnString());
-
-        public void RefreshAdminList()
-        {
-
-        }
+        private MySqlConnection MySQLConnection;
 
         public List<Admin> GetAdmins()
         {
             List<Admin> admins = new List<Admin>();
-
-            string queryAdmin = @"SELECT code
-                                ,name
-                                ,flastname
-                                ,slastname
-                                ,id
-                                ,phone
-                                ,mail
-                                FROM admins;";
-
-            using (MySqlCommand cmd = new MySqlCommand(queryAdmin, SqlConnection))
+            string queryAdmin = "CALL GetAdmins();";
+            try
             {
-                SqlConnection.Open();
-                var result = cmd.ExecuteReader();
-                while (result.Read())
+
+                using (MySQLConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
                 {
-                    Admin admin = new Admin(
-                        result.GetInt32(0),
-                        result.GetString(1),
-                        result.GetString(2),
-                        result.GetString(3),
-                        result.GetInt32(4),
-                        result.GetInt32(5),
-                        result.GetString(6));
-                    Console.WriteLine(admin.ToString());
-                    admins.Add(admin);
+                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConnection))
+                    {
+
+                        MySQLConnection.Open();
+                        var result = cmd.ExecuteReader();
+                        while (result.Read())
+                        {
+                            Admin admin = new Admin(
+                                result.GetInt32(0),
+                                result.GetString(1),
+                                result.GetString(2),
+                                result.GetString(3),
+                                result.GetString(4),
+                                result.GetInt32(5),
+                                result.GetInt32(6),
+                                result.GetString(7)
+                                );
+
+                            Console.WriteLine(admin.ToString());
+                            admins.Add(admin);
+                        }
+                        MySQLConnection.Close();
+                    }
+
+                    return admins;
                 }
-                SqlConnection.Close();
             }
-
-
-            return admins;
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+                return null;
+            }
         }
 
         public List<Bill> GetBills()
@@ -74,37 +75,47 @@ namespace ParkingServices
         }
 
         #region Filters
-        public Boolean AdminChecker(int id, string password)
+
+        public bool AdminChecker(int id, string password)
         {
-            MySqlCommand queryAdmin = new MySqlCommand();
-            queryAdmin.CommandText = @"SELECT id
-                                       ,password
-                                       FROM admin 
-                                       WHERE id = @parametroId AND password = @parametroPassword ;";
-            queryAdmin.Parameters.Add(new MySqlParameter("parametroId", id));
-            queryAdmin.Parameters.Add(new MySqlParameter("parametroPassword", password));
-
-            using (SqlConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
+            try
             {
-                using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), SqlConnection))
+                bool exists;        //Creamos bool para retornar.
+                //queryAdmin -> Sentencia SQL que se ejecutará para buscar al empleado.
+                string queryAdmin = string.Format("CALL AdminChecker({0}, N'{1}');", id, password);
+                //Abrimos la conexion con la base de datos.
+                using (MySQLConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
                 {
-                    SqlConnection.Open();
-                    var result = cmd.ExecuteReader();
-                    if (result.Read())
+                    //Creamos el objeto MySqlCommand que contendrá la sentencia SQL.
+                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConnection))
                     {
-                        if (id == result.GetInt32(0) && password == result.GetString(1))
-                            return true;
+                        MySQLConnection.Open();//Abrimos la base de datos.
+                        //Ejecutamos la sentencia y los datos, los guardamos en una tabla virtual de tipo MySqlDataReader.
+                        MySqlDataReader result = cmd.ExecuteReader();
+                        //Si la tabla virtual contiene datos.
+                        if (result.HasRows)
+                        {
+                            //Accion de acceso correcto.
+                            exists = true;
+                        }
+                        //Si la consulta no devolvio datos.
                         else
-                            return false;
+                        {
+                            //Acción de acceso fallido.
+                            exists = false;
+                        }
+                        MySQLConnection.Close();//Cerramos la base de datos.
                     }
-
-                    return false;
-
                 }
+                return exists;//Retornamos el objeto booleano.
             }
-
-
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+                return false;
+            }
         }
         #endregion
-    }
+
+    }//End Class
 }

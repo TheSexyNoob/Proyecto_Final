@@ -40,7 +40,8 @@ namespace Database
                 Password = Password,
                 Database = Database,
                 Port = 3306,
-                SslMode = MySqlSslMode.None
+                SslMode = MySqlSslMode.None,
+                AllowUserVariables = true
             };
             String connString = builder.ToString();
             return connString;

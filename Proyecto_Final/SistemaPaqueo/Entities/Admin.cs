@@ -15,11 +15,12 @@ namespace Entities
         public int Id { get; set; }
         public int Phone { get; set; }
         public string  Mail { get; set; }
-        public string password { get; set; }
+        public string Password { get; set; }
 
-        public Admin(int code, string name, string lastName, string secondLastName, int id, int phone, string mail)
+        public Admin(int code, string password, string name, string lastName, string secondLastName, int id, int phone, string mail)
         {
             Code = code;
+            Password = password;
             Name = name;
             LastName = lastName;
             SecondLastName = secondLastName;

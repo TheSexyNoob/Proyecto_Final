@@ -8,17 +8,19 @@ namespace Entities
 {
     public class Client
     {
+        public int code { get; }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Company  { get; set; }
         public Vehicule vehicule { get; set; }
-        
 
-        public Client(int id, string name, string company)
+        public Client(int code, int id, string name, string company, Vehicule vehicule)
         {
+            this.code = code;
             Id = id;
             Name = name;
             Company = company;
+            this.vehicule = vehicule;
         }
     }
 }
