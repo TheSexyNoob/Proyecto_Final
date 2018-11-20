@@ -46,6 +46,7 @@
             this.placa4 = new System.Windows.Forms.Label();
             this.placa3 = new System.Windows.Forms.Label();
             this.placa2 = new System.Windows.Forms.Label();
+            this.backBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // botton1
@@ -57,7 +58,7 @@
             this.botton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.botton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botton1.Location = new System.Drawing.Point(50, 40);
-            this.botton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.botton1.Margin = new System.Windows.Forms.Padding(2);
             this.botton1.Name = "botton1";
             this.botton1.Size = new System.Drawing.Size(85, 132);
             this.botton1.TabIndex = 0;
@@ -99,7 +100,7 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(153, 40);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 132);
             this.button2.TabIndex = 4;
@@ -117,7 +118,7 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(254, 40);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 132);
             this.button3.TabIndex = 5;
@@ -135,7 +136,7 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(356, 40);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 132);
             this.button4.TabIndex = 6;
@@ -153,7 +154,7 @@
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(457, 40);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 132);
             this.button5.TabIndex = 7;
@@ -171,7 +172,7 @@
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Location = new System.Drawing.Point(551, 40);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(85, 132);
             this.button6.TabIndex = 8;
@@ -294,11 +295,22 @@
             this.placa2.Visible = false;
             this.placa2.Click += new System.EventHandler(this.label11_Click);
             // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(12, 356);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(75, 23);
+            this.backBtn.TabIndex = 20;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 391);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.placa2);
             this.Controls.Add(this.placa3);
             this.Controls.Add(this.placa4);
@@ -317,7 +329,7 @@
             this.Controls.Add(this.placa);
             this.Controls.Add(this.dispo);
             this.Controls.Add(this.botton1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -346,6 +358,7 @@
         private System.Windows.Forms.Label placa4;
         private System.Windows.Forms.Label placa3;
         private System.Windows.Forms.Label placa2;
+        private System.Windows.Forms.Button backBtn;
     }
 }
 

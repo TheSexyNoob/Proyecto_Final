@@ -86,5 +86,12 @@ namespace GUI
         {
 
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu mainMenu = new Menu();
+            mainMenu.ShowDialog();
+        }
     }
 }

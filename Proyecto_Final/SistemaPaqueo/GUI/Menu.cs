@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace GUI
 {
@@ -17,6 +18,7 @@ namespace GUI
         public Menu()
         {
             InitializeComponent();
+
             menu = new MainMenu();
         }
 
@@ -51,6 +53,7 @@ namespace GUI
             this.Reports.TabIndex = 1;
             this.Reports.Text = "Reportes";
             this.Reports.UseVisualStyleBackColor = true;
+            this.Reports.Click += new System.EventHandler(this.Reports_Click);
             // 
             // EmployeeBtn
             // 
@@ -60,6 +63,7 @@ namespace GUI
             this.EmployeeBtn.TabIndex = 2;
             this.EmployeeBtn.Text = "Usuarios";
             this.EmployeeBtn.UseVisualStyleBackColor = true;
+            this.EmployeeBtn.Click += new System.EventHandler(this.EmployeeBtn_Click);
             // 
             // Menu
             // 
@@ -83,6 +87,20 @@ namespace GUI
             this.Hide();
             Form1 form = new Form1();
             form.ShowDialog();
+        }
+
+        private void EmployeeBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CreateUserMenu userMenu = new CreateUserMenu();
+            userMenu.ShowDialog();
+        }
+
+        private void Reports_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportMenu reportMenu = new ReportMenu();
+            reportMenu.ShowDialog();
         }
     }
 }
