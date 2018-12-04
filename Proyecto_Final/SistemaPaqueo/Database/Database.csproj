@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\MySql.Data.dll" />
-    <Content Include="ToDoList.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
