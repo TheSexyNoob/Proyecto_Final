@@ -23,5 +23,6 @@
         private System.Windows.Forms.Button ParkingBtn;
         private System.Windows.Forms.Button Reports;
         private System.Windows.Forms.Button EmployeeBtn;
+        private System.Windows.Forms.Label UserLbl;
     }
 }

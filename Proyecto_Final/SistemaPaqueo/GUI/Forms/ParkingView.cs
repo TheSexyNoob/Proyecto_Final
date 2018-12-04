@@ -14,12 +14,16 @@ namespace GUI
     public partial class Form1 : Form
     {
         Utils utils;
+        List<Button> buttonsList = new List<Button>();
+
         public Form1()
         {
             InitializeComponent();
              utils = new Utils();
         }
         public System.Drawing.Color BorderColor { get; set; }
+
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -92,6 +96,11 @@ namespace GUI
             this.Hide();
             Menu mainMenu = new Menu();
             mainMenu.ShowDialog();
+        }
+
+        private void addSpotBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

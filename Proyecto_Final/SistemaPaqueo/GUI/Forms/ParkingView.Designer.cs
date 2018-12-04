@@ -47,6 +47,7 @@
             this.placa3 = new System.Windows.Forms.Label();
             this.placa2 = new System.Windows.Forms.Label();
             this.backBtn = new System.Windows.Forms.Button();
+            this.addSpotBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // botton1
@@ -305,11 +306,22 @@
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // addSpotBtn
+            // 
+            this.addSpotBtn.Location = new System.Drawing.Point(93, 356);
+            this.addSpotBtn.Name = "addSpotBtn";
+            this.addSpotBtn.Size = new System.Drawing.Size(75, 23);
+            this.addSpotBtn.TabIndex = 21;
+            this.addSpotBtn.Text = "Add Spot";
+            this.addSpotBtn.UseVisualStyleBackColor = true;
+            this.addSpotBtn.Click += new System.EventHandler(this.addSpotBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 391);
+            this.Controls.Add(this.addSpotBtn);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.placa2);
             this.Controls.Add(this.placa3);
@@ -359,6 +371,7 @@
         private System.Windows.Forms.Label placa3;
         private System.Windows.Forms.Label placa2;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button addSpotBtn;
     }
 }
 

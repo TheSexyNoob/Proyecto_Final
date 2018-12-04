@@ -94,7 +94,16 @@ namespace GUI
             }
         }
 
-        
+        public string VerifyPlate(string plate)
+        {
+            /*if (findData==true) {
+                return "License Plate already in the system";
+            }
+            else{
+                return "ok";
+            }*/
+            return "";
+        }
 
     }
 }
