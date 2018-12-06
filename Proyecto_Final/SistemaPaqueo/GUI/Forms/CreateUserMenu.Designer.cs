@@ -37,18 +37,19 @@
             this.ModelLbl = new System.Windows.Forms.Label();
             this.typeLbl = new System.Windows.Forms.Label();
             this.descriptionLbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.companyTxt = new System.Windows.Forms.TextBox();
+            this.employeeNumberTxt = new System.Windows.Forms.TextBox();
+            this.IdTxt = new System.Windows.Forms.TextBox();
+            this.nameTxt = new System.Windows.Forms.TextBox();
+            this.licensePlateTxt = new System.Windows.Forms.TextBox();
+            this.colourTxt = new System.Windows.Forms.TextBox();
+            this.descriptionTxt = new System.Windows.Forms.TextBox();
+            this.modelTxt = new System.Windows.Forms.TextBox();
             this.vehiculeComboBox = new System.Windows.Forms.ComboBox();
             this.applyBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.okBtn = new System.Windows.Forms.Button();
+            this.infoLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nameLbl
@@ -132,61 +133,62 @@
             this.descriptionLbl.TabIndex = 8;
             this.descriptionLbl.Text = "Description:";
             // 
-            // textBox1
+            // companyTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(469, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 9;
+            this.companyTxt.Location = new System.Drawing.Point(469, 42);
+            this.companyTxt.Name = "companyTxt";
+            this.companyTxt.Size = new System.Drawing.Size(156, 20);
+            this.companyTxt.TabIndex = 9;
             // 
-            // textBox2
+            // employeeNumberTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(469, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 10;
+            this.employeeNumberTxt.Location = new System.Drawing.Point(469, 101);
+            this.employeeNumberTxt.Name = "employeeNumberTxt";
+            this.employeeNumberTxt.Size = new System.Drawing.Size(156, 20);
+            this.employeeNumberTxt.TabIndex = 10;
             // 
-            // textBox3
+            // IdTxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 20);
-            this.textBox3.TabIndex = 11;
+            this.IdTxt.Location = new System.Drawing.Point(152, 101);
+            this.IdTxt.Name = "IdTxt";
+            this.IdTxt.Size = new System.Drawing.Size(156, 20);
+            this.IdTxt.TabIndex = 11;
             // 
-            // textBox4
+            // nameTxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(152, 42);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(156, 20);
-            this.textBox4.TabIndex = 12;
+            this.nameTxt.Location = new System.Drawing.Point(152, 42);
+            this.nameTxt.Name = "nameTxt";
+            this.nameTxt.Size = new System.Drawing.Size(156, 20);
+            this.nameTxt.TabIndex = 12;
+            this.nameTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTxt_KeyPress);
             // 
-            // textBox5
+            // licensePlateTxt
             // 
-            this.textBox5.Location = new System.Drawing.Point(152, 221);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(156, 20);
-            this.textBox5.TabIndex = 13;
+            this.licensePlateTxt.Location = new System.Drawing.Point(152, 221);
+            this.licensePlateTxt.Name = "licensePlateTxt";
+            this.licensePlateTxt.Size = new System.Drawing.Size(156, 20);
+            this.licensePlateTxt.TabIndex = 13;
             // 
-            // textBox6
+            // colourTxt
             // 
-            this.textBox6.Location = new System.Drawing.Point(152, 275);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(156, 20);
-            this.textBox6.TabIndex = 14;
+            this.colourTxt.Location = new System.Drawing.Point(152, 275);
+            this.colourTxt.Name = "colourTxt";
+            this.colourTxt.Size = new System.Drawing.Size(156, 20);
+            this.colourTxt.TabIndex = 14;
             // 
-            // textBox7
+            // descriptionTxt
             // 
-            this.textBox7.Location = new System.Drawing.Point(469, 275);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(156, 20);
-            this.textBox7.TabIndex = 15;
+            this.descriptionTxt.Location = new System.Drawing.Point(469, 275);
+            this.descriptionTxt.Name = "descriptionTxt";
+            this.descriptionTxt.Size = new System.Drawing.Size(156, 20);
+            this.descriptionTxt.TabIndex = 15;
             // 
-            // textBox8
+            // modelTxt
             // 
-            this.textBox8.Location = new System.Drawing.Point(152, 329);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(156, 20);
-            this.textBox8.TabIndex = 16;
+            this.modelTxt.Location = new System.Drawing.Point(152, 329);
+            this.modelTxt.Name = "modelTxt";
+            this.modelTxt.Size = new System.Drawing.Size(156, 20);
+            this.modelTxt.TabIndex = 16;
             // 
             // vehiculeComboBox
             // 
@@ -207,6 +209,7 @@
             this.applyBtn.TabIndex = 18;
             this.applyBtn.Text = "Apply";
             this.applyBtn.UseVisualStyleBackColor = true;
+            this.applyBtn.Click += new System.EventHandler(this.applyBtn_Click);
             // 
             // cancelBtn
             // 
@@ -226,29 +229,39 @@
             this.okBtn.TabIndex = 20;
             this.okBtn.Text = "Ok";
             this.okBtn.UseVisualStyleBackColor = true;
+            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
+            // 
+            // infoLbl
+            // 
+            this.infoLbl.AutoSize = true;
+            this.infoLbl.Location = new System.Drawing.Point(79, 396);
+            this.infoLbl.Name = "infoLbl";
+            this.infoLbl.Size = new System.Drawing.Size(0, 13);
+            this.infoLbl.TabIndex = 21;
             // 
             // CreateUserMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.okBtn);
-            this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.applyBtn);
+            this.Controls.Add(this.infoLbl);
             this.Controls.Add(this.vehiculeComboBox);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.modelTxt);
+            this.Controls.Add(this.descriptionTxt);
+            this.Controls.Add(this.colourTxt);
+            this.Controls.Add(this.licensePlateTxt);
             this.Controls.Add(this.descriptionLbl);
             this.Controls.Add(this.typeLbl);
             this.Controls.Add(this.ModelLbl);
             this.Controls.Add(this.ColourLbl);
             this.Controls.Add(this.licenseLbl);
+            this.Controls.Add(this.okBtn);
+            this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.applyBtn);
+            this.Controls.Add(this.nameTxt);
+            this.Controls.Add(this.IdTxt);
+            this.Controls.Add(this.employeeNumberTxt);
+            this.Controls.Add(this.companyTxt);
             this.Controls.Add(this.EmployeeLbl);
             this.Controls.Add(this.CompanyLbl);
             this.Controls.Add(this.IdLbl);
@@ -271,17 +284,18 @@
         private System.Windows.Forms.Label ModelLbl;
         private System.Windows.Forms.Label typeLbl;
         private System.Windows.Forms.Label descriptionLbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox companyTxt;
+        private System.Windows.Forms.TextBox employeeNumberTxt;
+        private System.Windows.Forms.TextBox IdTxt;
+        private System.Windows.Forms.TextBox nameTxt;
+        private System.Windows.Forms.TextBox licensePlateTxt;
+        private System.Windows.Forms.TextBox colourTxt;
+        private System.Windows.Forms.TextBox descriptionTxt;
+        private System.Windows.Forms.TextBox modelTxt;
         private System.Windows.Forms.ComboBox vehiculeComboBox;
         private System.Windows.Forms.Button applyBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button okBtn;
+        private System.Windows.Forms.Label infoLbl;
     }
 }

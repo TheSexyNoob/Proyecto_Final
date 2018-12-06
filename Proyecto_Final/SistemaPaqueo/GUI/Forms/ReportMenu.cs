@@ -23,5 +23,10 @@ namespace GUI
             Menu mainMenu = new Menu();
             mainMenu.ShowDialog();
         }
+
+        private void filterBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

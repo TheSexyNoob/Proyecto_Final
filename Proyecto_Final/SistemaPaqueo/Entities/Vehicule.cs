@@ -43,7 +43,7 @@ namespace Entities
 
         public virtual string GetSummary()
         {
-            return string.Format("El vehiculo placa: {0} es un {1}, color: {2}, modelo: {3}. Al ingresar se hizo la siguiente anotación: {4}", LicensePlate, Type, Colour, Model, Description);
+            return string.Format("License Plate: {0} Type: {1}, colour: {2}, Model: {3}. Note: {4}", LicensePlate, Type, Colour, Model, Description);
         }
 
         

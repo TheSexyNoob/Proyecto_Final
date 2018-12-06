@@ -22,5 +22,14 @@ namespace Entities
             Company = company;
             this.vehicule = vehicule;
         }
+
+        public Client()
+        {
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Name: {0} ID: {1} Code: {2} Company: {3}" + vehicule.GetSummary()+"", Name, Id, code,Company);
+        }
     }
 }
