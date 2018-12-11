@@ -24,18 +24,29 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Image img = (Image)qrCodeImgControl1.Image.Clone();
-
-            SaveFileDialog sfl = new SaveFileDialog();
-            sfl.AddExtension = true;
-            sfl.Filter = "Image JPG(*.jpg)|*.jpg";
-            sfl.ShowDialog();
-            if (!string.IsNullOrEmpty(sfl.FileName))
+            if (textBox1.Text.Length < 10 && textBox1.Text.Length > 8)
             {
-                img.Save(sfl.FileName);
-                textBox1.Text=null;
+                Image img = (Image)qrCodeImgControl1.Image.Clone();
+
+                SaveFileDialog sfl = new SaveFileDialog();
+                sfl.AddExtension = true;
+                sfl.Filter = "Image JPG(*.jpg)|*.jpg";
+                sfl.ShowDialog();
+                if (!string.IsNullOrEmpty(sfl.FileName))
+                {
+                    img.Save(sfl.FileName);
+                    textBox1.Text = null;
+                }
+                img.Dispose();
+
             }
-            img.Dispose();
+            else
+            {
+                label2.Text = "El ID es de 9 digitos";
+
+            }
+
+
 
         }
 
@@ -43,6 +54,11 @@ namespace WindowsFormsApp2
         {
             qrCodeImgControl1.Text = textBox1.Text;
             
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }
