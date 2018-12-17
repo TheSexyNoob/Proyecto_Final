@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Btn_Back = new System.Windows.Forms.Button();
+            this.Btn_Register = new System.Windows.Forms.Button();
             this.Lbl_Name = new System.Windows.Forms.Label();
             this.Lbl_Phone = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txt_Name = new System.Windows.Forms.TextBox();
+            this.Txt_Phone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // Btn_Back
             // 
-            this.button1.Location = new System.Drawing.Point(126, 376);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Volver";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_Back.Location = new System.Drawing.Point(126, 376);
+            this.Btn_Back.Name = "Btn_Back";
+            this.Btn_Back.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Back.TabIndex = 0;
+            this.Btn_Back.Text = "Volver";
+            this.Btn_Back.UseVisualStyleBackColor = true;
+            this.Btn_Back.Click += new System.EventHandler(this.Btn_Back_Click);
             // 
-            // button2
+            // Btn_Register
             // 
-            this.button2.Location = new System.Drawing.Point(332, 376);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Registrar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_Register.Location = new System.Drawing.Point(332, 376);
+            this.Btn_Register.Name = "Btn_Register";
+            this.Btn_Register.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Register.TabIndex = 1;
+            this.Btn_Register.Text = "Registrar";
+            this.Btn_Register.UseVisualStyleBackColor = true;
+            this.Btn_Register.Click += new System.EventHandler(this.Btn_Register_Click);
             // 
             // Lbl_Name
             // 
@@ -72,32 +74,32 @@
             this.Lbl_Phone.TabIndex = 3;
             this.Lbl_Phone.Text = "Telefono:";
             // 
-            // textBox1
+            // Txt_Name
             // 
-            this.textBox1.Location = new System.Drawing.Point(332, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 20);
-            this.textBox1.TabIndex = 4;
+            this.Txt_Name.Location = new System.Drawing.Point(332, 120);
+            this.Txt_Name.Name = "Txt_Name";
+            this.Txt_Name.Size = new System.Drawing.Size(181, 20);
+            this.Txt_Name.TabIndex = 4;
             // 
-            // textBox2
+            // Txt_Phone
             // 
-            this.textBox2.Location = new System.Drawing.Point(332, 217);
-            this.textBox2.MaxLength = 8;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 20);
-            this.textBox2.TabIndex = 5;
+            this.Txt_Phone.Location = new System.Drawing.Point(332, 217);
+            this.Txt_Phone.MaxLength = 8;
+            this.Txt_Phone.Name = "Txt_Phone";
+            this.Txt_Phone.Size = new System.Drawing.Size(181, 20);
+            this.Txt_Phone.TabIndex = 5;
             // 
             // CreateCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 450);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Txt_Phone);
+            this.Controls.Add(this.Txt_Name);
             this.Controls.Add(this.Lbl_Phone);
             this.Controls.Add(this.Lbl_Name);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_Register);
+            this.Controls.Add(this.Btn_Back);
             this.Name = "CreateCompany";
             this.Text = "Crear Compañia.";
             this.ResumeLayout(false);
@@ -107,11 +109,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Btn_Back;
+        private System.Windows.Forms.Button Btn_Register;
         private System.Windows.Forms.Label Lbl_Name;
         private System.Windows.Forms.Label Lbl_Phone;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txt_Name;
+        private System.Windows.Forms.TextBox Txt_Phone;
     }
 }

@@ -17,6 +17,17 @@ namespace GUI.Forms
             InitializeComponent();
         }
 
+        private void Btn_Register_Click(object sender, EventArgs e)
+        {
+            ParkingServices.ParkingServices services = new ParkingServices.ParkingServices();
 
+        }
+
+        private void Btn_Back_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            this.Hide();
+            menu.Show();
+        }
     }
 }

@@ -48,23 +48,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\CreateCompany.cs">
+    <Compile Include="Forms\Company\CreateCompany.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreateCompany.Designer.cs">
+    <Compile Include="Forms\Company\CreateCompany.Designer.cs">
       <DependentUpon>CreateCompany.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CreateUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CreateUser.Designer.cs">
-      <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Client\CreateClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Client\CreateClient.Designer.cs">
+      <DependentUpon>CreateClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Vehicule\CreateVehicule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vehicule\CreateVehicule.Designer.cs">
+      <DependentUpon>CreateVehicule.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs" />
     <Compile Include="Forms\ParkingView.cs">
@@ -88,11 +94,11 @@
       <DependentUpon>ReportMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
-    <EmbeddedResource Include="Forms\CreateCompany.resx">
-      <DependentUpon>CreateCompany.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Client\CreateClient.resx">
+      <DependentUpon>CreateClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateUser.resx">
-      <DependentUpon>CreateUser.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Company\CreateCompany.resx">
+      <DependentUpon>CreateCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ParkingView.resx">
       <DependentUpon>ParkingView.cs</DependentUpon>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vehicule\CreateVehicule.resx">
+      <DependentUpon>CreateVehicule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

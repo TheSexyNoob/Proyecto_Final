@@ -8,7 +8,7 @@ namespace ParkingServices
 {
     public class ParkingServices : IParking
     {
-        private MySqlConnection MySQLConnection;
+        private MySqlConnection MySQLConn;
 
         public List<Bill> GetBills()
         {
@@ -30,6 +30,290 @@ namespace ParkingServices
             throw new NotImplementedException();
         }
 
+        #region TypeVehicules
+        public List<TypeVehicule> GetTypeVehicule()
+        {
+            #region Variables
+            List<TypeVehicule> Types = new List<TypeVehicule>();
+            string query = "CALL GetTypes();";
+            int Code;
+            string Name;
+            Char Type;
+            #endregion
+            try
+            {
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query.ToString(), MySQLConn))
+                    {
+                        MySQLConn.Open();
+                        var result = cmd.ExecuteReader();
+                        while (result.Read())
+                        {
+                            try
+                            {
+                                Code = result.GetInt32(0);
+                                Name = result.GetString(1);
+                                Type = result.GetChar(2);
+                                TypeVehicule Tv = new TypeVehicule(Code, Name, Type);
+                                Types.Add(Tv);
+                            }
+                            catch (System.Data.SqlTypes.SqlNullValueException e)
+                            {
+                                Code = 0;
+                                Name = "";
+                                Type = ' ';
+                                TypeVehicule Tv = new TypeVehicule(Code, Name, Type);
+                            }
+                        }
+                        MySQLConn.Close();
+                    }
+                    return Types;
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+                return null;
+            }
+        }
+        public bool ExistVehicule(string Plate)
+        {
+            #region Variables
+            bool Exists;
+            string query = string.Format("CALL GetVehicule({0});", Plate);
+            #endregion
+            try
+            {
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query.ToString(), MySQLConn))
+                    {
+                        MySQLConn.Open();
+                        var result = cmd.ExecuteReader();
+                        if (result.HasRows)
+                        {
+                            Exists = true;
+                        }
+                        else
+                        {
+                            Exists = false;
+                        }
+                        MySQLConn.Close();
+                    }
+                    return Exists;
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+                return true;
+            }
+        }
+        public void InsertVehicule(Vehicule vehicule)
+        {
+            try
+            {
+                string query = string.Format("CALL InsertVehicule({0}, N'{1}', N'{2}', {3}, {4});", vehicule.LicensePlate, vehicule.Colour, vehicule.Model, vehicule.Type, vehicule.Description);
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query.ToString(), MySQLConn))
+                    {
+                        MySQLConn.Open();
+                        cmd.ExecuteNonQuery();
+                        Console.Write("DONE!! Vehicule added.");
+                    }
+                }
+                MySQLConn.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+            }
+        }
+        #endregion
+
+        #region Client
+        public Client GetClient(int id)
+        {
+            #region Variables
+            Client client;
+            string query = "CALL GetClient();";
+            int Code;
+            int ClientId;
+            string Name;
+            int Company;
+            #endregion
+            try
+            {
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query.ToString(), MySQLConn))
+                    {
+                        MySQLConn.Open();
+                        var result = cmd.ExecuteReader();
+                        if (result.Read())
+                        {
+                            try
+                            {
+                                Code = result.GetInt32(0);
+                                ClientId = result.GetInt32(1);
+                                Name = result.GetString(2);
+                                Company = result.GetInt32(3);
+                                client = new Client(Code, ClientId, Name, Company);
+                            }
+                            catch (System.Data.SqlTypes.SqlNullValueException e)
+                            {
+                                client = null;
+                            }
+                        }
+                        else
+                        {
+                            client = null;
+                        }
+                        MySQLConn.Close();
+                    }
+                    return client;
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+                return null;
+            }
+        }
+        public bool ExistClient(int id)
+        {
+            #region Variables
+            bool Exists;
+            string query = string.Format("CALL GetClient({0});", id);
+            int Code;
+            int ClientId;
+            string Name;
+            int Company;
+            #endregion
+            try
+            {
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query.ToString(), MySQLConn))
+                    {
+                        MySQLConn.Open();
+                        var result = cmd.ExecuteReader();
+                        if (result.HasRows)
+                        {
+                            Exists = true;
+                        }
+                        else
+                        {
+                            Exists = false;
+                        }
+                        MySQLConn.Close();
+                    }
+                    return Exists;
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+                return true;
+            }
+        }
+        public void InsertClient(Client client)
+        {
+            try
+            {
+                string query = string.Format("CALL InsertClient({0}, N'{1}', {2});", client.ClientId, client.Name, client.Company);
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query.ToString(), MySQLConn))
+                    {
+                        MySQLConn.Open();
+                        cmd.ExecuteNonQuery();
+                        Console.Write("DONE!! Client added.");
+                    }   
+                }
+            MySQLConn.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+            }
+        }
+        #endregion
+
+        #region Company
+        public List<Company> GetCompanies()
+        {
+            #region Variables
+            List<Company> companies = new List<Company>();
+            string query = "CALL GetCompanies();";
+            int Code;
+            string Name;
+            int Phone;
+            #endregion
+            try
+            {
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query.ToString(), MySQLConn))
+                    {
+                        MySQLConn.Open();
+                        var result = cmd.ExecuteReader();
+                        while (result.Read())
+                        {
+                            try
+                            {
+                                Code = result.GetInt32(0);
+                                Name = result.GetString(1);
+                                Phone = result.GetInt32(2);
+                                Company company = new Company(Code, Name, Phone);
+                                companies.Add(company);
+                                Console.Write(company.ToString());
+                            }
+                            catch(System.Data.SqlTypes.SqlNullValueException e)
+                            {
+                                Code = result.GetInt32(0);
+                                Name = result.GetString(1);
+                                Company company = new Company(Code, Name, 0);
+                                companies.Add(company);
+                                Console.Write(company.ToString());
+                            }
+                        }
+                        MySQLConn.Close();
+                    }
+                    return companies;
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+                return null;
+            }
+        }
+
+        public void InsertCompany(Company company)
+        {
+            try
+            {
+                string query = string.Format("CALL InsertCompany(N'{0}', {1})", company.Name, company.Phone);
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query.ToString(), MySQLConn))
+                    {
+                        cmd.ExecuteNonQuery();
+                        Console.Write("DONE!! Company added.");
+                    }                    
+                }
+                MySQLConn.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+            }
+        }
+        #endregion
+
         #region Admin
         public List<Admin> GetAdmins()
         {
@@ -38,12 +322,12 @@ namespace ParkingServices
             try
             {
 
-                using (MySQLConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
                 {
-                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConnection))
+                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConn))
                     {
 
-                        MySQLConnection.Open();
+                        MySQLConn.Open();
                         var result = cmd.ExecuteReader();
                         while (result.Read())
                         {
@@ -61,7 +345,7 @@ namespace ParkingServices
                             Console.WriteLine(admin.ToString());
                             admins.Add(admin);
                         }
-                        MySQLConnection.Close();
+                        MySQLConn.Close();
                     }
 
                     return admins;
@@ -91,11 +375,11 @@ namespace ParkingServices
             string queryAdmin = string.Format("CALL GetAdmin({0});", Admin_ID);
             try
             {
-                using (MySQLConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
                 {
-                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConnection))
+                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConn))
                     {
-                        MySQLConnection.Open();
+                        MySQLConn.Open();
                         var result = cmd.ExecuteReader();
                         if (result.Read())
                         {
@@ -123,7 +407,7 @@ namespace ParkingServices
                         {
                             admin = null;
                         }
-                        MySQLConnection.Close();
+                        MySQLConn.Close();
                     }
                     return admin;
                 }
@@ -143,12 +427,12 @@ namespace ParkingServices
                 //queryAdmin -> Sentencia SQL que se ejecutará para buscar al empleado.
                 string queryAdmin = string.Format("CALL AdminLogin({0}, N'{1}');", id, password);
                 //Abrimos la conexion con la base de datos.
-                using (MySQLConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
                 {
                     //Creamos el objeto MySqlCommand que contendrá la sentencia SQL.
-                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConnection))
+                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConn))
                     {
-                        MySQLConnection.Open();//Abrimos la base de datos.
+                        MySQLConn.Open();//Abrimos la base de datos.
                         //Ejecutamos la sentencia y los datos, los guardamos en una tabla virtual de tipo MySqlDataReader.
                         MySqlDataReader result = cmd.ExecuteReader();
                         //Si la tabla virtual contiene datos.
@@ -163,7 +447,7 @@ namespace ParkingServices
                             //Acción de acceso fallido.
                             exists = false;
                         }
-                        MySQLConnection.Close();//Cerramos la base de datos.
+                        MySQLConn.Close();//Cerramos la base de datos.
                     }
                 }
                 return exists;//Retornamos el objeto booleano.
@@ -183,11 +467,11 @@ namespace ParkingServices
             string queryAdmin = string.Format("CALL GetBill({0});", id);
             try
             {
-                using (MySQLConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                using (MySQLConn = new MySqlConnection(ConnectionDBTest.DbConnString()))
                 {
-                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConnection))
+                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConn))
                     {
-                        MySQLConnection.Open();
+                        MySQLConn.Open();
                         var result = cmd.ExecuteReader();
                         if (result.Read())
                         {
@@ -200,7 +484,7 @@ namespace ParkingServices
                                 Console.WriteLine("La Factura #" + result.GetInt32(0) + ", tiene un monto de: 0 colones hasta el momento.");
                             }
                         }
-                        MySQLConnection.Close();
+                        MySQLConn.Close();
                     }
                 }
             }
@@ -213,3 +497,4 @@ namespace ParkingServices
 
     }//End Class
 }
+

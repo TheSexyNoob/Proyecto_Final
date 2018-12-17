@@ -29,8 +29,7 @@ namespace Entities
         #region Methods
         public override string ToString()
         {
-            return string.Format(@"El cliente {0}, tiene la cedula {1}.\n
-                                    Pertenece a {2}.", Name, ClientId, Company);
+            return string.Format(@"El cliente {0}, tiene la cedula {1}. Pertenece a {2}.", Name, ClientId, Company);
         }
         #endregion
 

@@ -25,8 +25,8 @@ namespace Entities
 
         #region Methods
         public override string ToString()
-        {
-            return string.Format("#{0}.\n Nombre de la empresa: {1}.\n Telefono: {2}.", Code, Name, Phone);
+        {   
+            return string.Format("{0}.", Name);
         }
         #endregion
     }
