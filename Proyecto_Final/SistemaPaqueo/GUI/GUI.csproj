@@ -48,11 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\CreateUserMenu.cs">
+    <Compile Include="Forms\CreateCompany.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreateUserMenu.Designer.cs">
-      <DependentUpon>CreateUserMenu.cs</DependentUpon>
+    <Compile Include="Forms\CreateCompany.Designer.cs">
+      <DependentUpon>CreateCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateUser.Designer.cs">
+      <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -82,8 +88,11 @@
       <DependentUpon>ReportMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
-    <EmbeddedResource Include="Forms\CreateUserMenu.resx">
-      <DependentUpon>CreateUserMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CreateCompany.resx">
+      <DependentUpon>CreateCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateUser.resx">
+      <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ParkingView.resx">
       <DependentUpon>ParkingView.cs</DependentUpon>
@@ -128,6 +137,10 @@
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{832CB189-4ACF-4F75-A9C9-E87A5C1E634F}</Project>
       <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkingServices\ParkingServices.csproj">
+      <Project>{2bf5d236-83ae-4cfe-9c53-f287306874b4}</Project>
+      <Name>ParkingServices</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

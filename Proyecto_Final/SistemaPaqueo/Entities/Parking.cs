@@ -24,7 +24,7 @@ namespace Entities
         #endregion
 
         #region Methods
-        public string ToString()
+        public override string ToString()
         {
             return "El Parqueo de " + Name + " #" + Code + " y telefono: " + Phone;
         }

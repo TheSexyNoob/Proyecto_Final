@@ -8,7 +8,6 @@ namespace ParkingServices
 {
     public class ParkingServices : IParking
     {
-
         private MySqlConnection MySQLConnection;
 
         public List<Bill> GetBills()
@@ -74,13 +73,75 @@ namespace ParkingServices
                 return null;
             }
         }
+
+        public Admin GetAdmin(int Admin_ID)
+        {
+            #region Variables 
+            Admin admin;
+            int Code;
+            string Name;
+            string LastName;
+            string SecondLastName;
+            int Id;
+            int Phone;
+            string Mail;
+            string Password;
+            #endregion
+
+            string queryAdmin = string.Format("CALL GetAdmin({0});", Admin_ID);
+            try
+            {
+                using (MySQLConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConnection))
+                    {
+                        MySQLConnection.Open();
+                        var result = cmd.ExecuteReader();
+                        if (result.Read())
+                        {
+                            Code = result.GetInt32(0);
+                            Name = result.GetString(1);
+                            LastName = result.GetString(2);
+                            SecondLastName = result.GetString(3);
+                            Id = result.GetInt32(4);
+                            Phone = result.GetInt32(5);
+                            Mail = result.GetString(6);
+                            Password = "";
+
+                            admin = new Admin(
+                                Code,
+                                Password,
+                                Name,
+                                LastName,
+                                SecondLastName,
+                                Id,
+                                Phone,
+                                Mail
+                                );
+                        }
+                        else
+                        {
+                            admin = null;
+                        }
+                        MySQLConnection.Close();
+                    }
+                    return admin;
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
+                return null;
+            }
+        }
+
         public bool AdminChecker(int id, string password)
         {
             try
             {
                 bool exists;        //Creamos bool para retornar.
                 //queryAdmin -> Sentencia SQL que se ejecutará para buscar al empleado.
-                string queryAdmin = string.Format("CALL AdminChecker({0}, N'{1}');", id, password);
+                string queryAdmin = string.Format("CALL AdminLogin({0}, N'{1}');", id, password);
                 //Abrimos la conexion con la base de datos.
                 using (MySQLConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
                 {

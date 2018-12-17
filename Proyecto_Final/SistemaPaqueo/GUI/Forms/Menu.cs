@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3;
+using ParkingServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace GUI
@@ -15,6 +16,7 @@ namespace GUI
     public partial class Menu : Form
     {
         MainMenu menu;
+
         public Menu()
         {
             InitializeComponent();
@@ -22,11 +24,15 @@ namespace GUI
             menu = new MainMenu();
         }
 
+        public void SetLabel(String Name)
+        {
+            UserLbl.Text += Name;
+        }
+
         private void Menu_Load(object sender, EventArgs e)
         {
 
         }
-
 
         private void InitializeComponent()
         {

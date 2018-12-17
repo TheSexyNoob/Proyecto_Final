@@ -30,10 +30,10 @@
         {
             this.LoginBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.UserLbl = new System.Windows.Forms.Label();
-            this.passLbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Lbl_Code = new System.Windows.Forms.Label();
+            this.Lbl_Password = new System.Windows.Forms.Label();
+            this.Txt_Code = new System.Windows.Forms.TextBox();
+            this.Txt_Password = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,37 +58,41 @@
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // UserLbl
+            // Lbl_Code
             // 
-            this.UserLbl.AutoSize = true;
-            this.UserLbl.Location = new System.Drawing.Point(183, 60);
-            this.UserLbl.Name = "UserLbl";
-            this.UserLbl.Size = new System.Drawing.Size(55, 13);
-            this.UserLbl.TabIndex = 2;
-            this.UserLbl.Text = "Username";
+            this.Lbl_Code.AutoSize = true;
+            this.Lbl_Code.Location = new System.Drawing.Point(183, 60);
+            this.Lbl_Code.Name = "Lbl_Code";
+            this.Lbl_Code.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_Code.TabIndex = 2;
+            this.Lbl_Code.Text = "Code:";
             // 
-            // passLbl
+            // Lbl_Password
             // 
-            this.passLbl.AutoSize = true;
-            this.passLbl.Location = new System.Drawing.Point(183, 143);
-            this.passLbl.Name = "passLbl";
-            this.passLbl.Size = new System.Drawing.Size(53, 13);
-            this.passLbl.TabIndex = 3;
-            this.passLbl.Text = "Password";
+            this.Lbl_Password.AutoSize = true;
+            this.Lbl_Password.Location = new System.Drawing.Point(183, 143);
+            this.Lbl_Password.Name = "Lbl_Password";
+            this.Lbl_Password.Size = new System.Drawing.Size(56, 13);
+            this.Lbl_Password.TabIndex = 3;
+            this.Lbl_Password.Text = "Password:";
             // 
-            // textBox1
+            // Txt_Code
             // 
-            this.textBox1.Location = new System.Drawing.Point(263, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 20);
-            this.textBox1.TabIndex = 4;
+            this.Txt_Code.AcceptsTab = true;
+            this.Txt_Code.Location = new System.Drawing.Point(263, 57);
+            this.Txt_Code.MaxLength = 4;
+            this.Txt_Code.Name = "Txt_Code";
+            this.Txt_Code.Size = new System.Drawing.Size(123, 20);
+            this.Txt_Code.TabIndex = 4;
             // 
-            // textBox2
+            // Txt_Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(263, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(123, 20);
-            this.textBox2.TabIndex = 5;
+            this.Txt_Password.Location = new System.Drawing.Point(263, 140);
+            this.Txt_Password.MaxLength = 20;
+            this.Txt_Password.Name = "Txt_Password";
+            this.Txt_Password.Size = new System.Drawing.Size(123, 20);
+            this.Txt_Password.TabIndex = 5;
+            this.Txt_Password.UseSystemPasswordChar = true;
             // 
             // pictureBox1
             // 
@@ -104,10 +108,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 311);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.passLbl);
-            this.Controls.Add(this.UserLbl);
+            this.Controls.Add(this.Txt_Password);
+            this.Controls.Add(this.Txt_Code);
+            this.Controls.Add(this.Lbl_Password);
+            this.Controls.Add(this.Lbl_Code);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.LoginBtn);
             this.Name = "Login";
@@ -122,10 +126,10 @@
 
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.Button ExitBtn;
-        private System.Windows.Forms.Label UserLbl;
-        private System.Windows.Forms.Label passLbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label Lbl_Code;
+        private System.Windows.Forms.Label Lbl_Password;
+        private System.Windows.Forms.TextBox Txt_Code;
+        private System.Windows.Forms.TextBox Txt_Password;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
