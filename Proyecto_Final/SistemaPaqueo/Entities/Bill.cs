@@ -8,46 +8,43 @@ namespace Entities
 {
     public class Bill
     {
+
+        #region Variables
+        public int Code { get; set; }
+        public int ParkingID { get; set; }
+        public int Spot { get; set; }
         public string LicensePlate { get; set; }
-        public string ClientName { get; set; }
-        public string AdminName { get; set; }
-        public int AdminCode { get; set; }
-        public int Amount { get; set; }
-        public int Fare { get; set; }
-        public DateTime date {get;}
+        public DateTime Time_Bill { get; set; }
+        public DateTime Time_Bill_Paid { get; set; }
+        public int ClientID { get; set; }
+        public int AdminID { get; set; }
+        public char IsPaid { get; set; }
+        public decimal Amount { get; set; }
+        #endregion
 
-        public Bill(string licensePlate, string clientName, string adminName, int adminCode, int amount, int fare)
+        #region Builder
+        public Bill(int code, int parkingID, int spot, string licensePlate, DateTime time_Bill, DateTime time_Bill_Paid, int clientID, int adminID, char isPaid, decimal amount)
         {
-            date = DateTime.Now;
+            Code = code;
+            ParkingID = parkingID;
+            Spot = spot;
             LicensePlate = licensePlate;
-            ClientName = clientName;
-            AdminName = adminName;
-            AdminCode = adminCode;
+            Time_Bill = time_Bill;
+            Time_Bill_Paid = time_Bill_Paid;
+            ClientID = clientID;
+            AdminID = adminID;
+            IsPaid = isPaid;
             Amount = amount;
-            Fare = fare;
         }
+        #endregion
 
-        public void VehiculePayment(int placa) {
-
-            Vehicule car = new Vehicule();//Find vehicule
-            double subTotal, total;
-
-            if (car.InHour.Day == car.OutHour.Day)
-            {
-                int parkinHours =  car.OutHour.Hour - car.InHour.Hour;
-                 subTotal = 600 * parkinHours;
-                 total = subTotal * (1 + 0.13);
-                
-            }
-            else {
-                int extraDays = car.OutHour.Day - car.InHour.Day;
-                subTotal = 1+2;
-            }
-
-            //Showbill
-            //SafeBillDB
-
-
+        #region Methods
+        public override string ToString()
+        {
+            return string.Format(@"LA FACTURA #{0}.\n
+                                   Parqueo codigo "
+                                ,Code);
         }
+        #endregion
     }
 }

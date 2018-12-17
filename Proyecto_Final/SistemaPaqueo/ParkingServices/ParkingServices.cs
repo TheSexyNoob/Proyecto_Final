@@ -11,6 +11,27 @@ namespace ParkingServices
 
         private MySqlConnection MySQLConnection;
 
+        public List<Bill> GetBills()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Client> GetClients()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Spot> GetSpots()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Vehicule> GetVehicules()
+        {
+            throw new NotImplementedException();
+        }
+
+        #region Admin
         public List<Admin> GetAdmins()
         {
             List<Admin> admins = new List<Admin>();
@@ -53,29 +74,6 @@ namespace ParkingServices
                 return null;
             }
         }
-
-        public List<Bill> GetBills()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Client> GetClients()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Spot> GetSpots()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Vehicule> GetVehicules()
-        {
-            throw new NotImplementedException();
-        }
-
-        #region Filters
-
         public bool AdminChecker(int id, string password)
         {
             try
@@ -113,6 +111,41 @@ namespace ParkingServices
             {
                 Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
                 return false;
+            }
+        }
+        #endregion
+
+        #region Bill
+        public void ShowBill(int id)
+        {
+            List<Admin> admins = new List<Admin>();
+            string queryAdmin = string.Format("CALL GetBill({0});", id);
+            try
+            {
+                using (MySQLConnection = new MySqlConnection(ConnectionDBTest.DbConnString()))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(queryAdmin.ToString(), MySQLConnection))
+                    {
+                        MySQLConnection.Open();
+                        var result = cmd.ExecuteReader();
+                        if (result.Read())
+                        {
+                            try
+                            {
+                                Console.WriteLine("La Factura #" + result.GetInt32(0) + ", tiene un monto de: " + result.GetDecimal(8));
+                            }
+                            catch(System.Data.SqlTypes.SqlNullValueException e)
+                            {
+                                Console.WriteLine("La Factura #" + result.GetInt32(0) + ", tiene un monto de: 0 colones hasta el momento.");
+                            }
+                        }
+                        MySQLConnection.Close();
+                    }
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Ha ocurrido un error al conectar con la base de datos.\n");
             }
         }
         #endregion

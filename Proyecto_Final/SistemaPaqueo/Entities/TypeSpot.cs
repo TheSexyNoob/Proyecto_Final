@@ -6,33 +6,28 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Client
+    public class TypeSpot
     {
-
         #region Variables
         public int Code { get; set; }
-        public int ClientId { get; set; }
         public string Name { get; set; }
-        public int Company { get; set; }
+        public char Type { get; set; }
         #endregion
 
         #region Builder
-        public Client(int code, int clientId, string name, int company)
+        public TypeSpot(int code, string name, char type)
         {
             Code = code;
-            ClientId = clientId;
             Name = name;
-            Company = company;
+            Type = type;
         }
         #endregion
 
         #region Methods
         public override string ToString()
         {
-            return string.Format(@"El cliente {0}, tiene la cedula {1}.\n
-                                    Pertenece a {2}.", Name, ClientId, Company);
+            return string.Format("#{0}.\nEspacio de tipo: {1}. (Descripción: {2})", Code, Name, Type);
         }
         #endregion
-
     }
 }

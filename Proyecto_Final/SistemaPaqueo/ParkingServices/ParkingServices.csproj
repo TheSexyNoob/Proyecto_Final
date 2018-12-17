@@ -48,7 +48,6 @@
     <Compile Include="IParking.cs" />
     <Compile Include="ParkingServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Database\Database.csproj">
