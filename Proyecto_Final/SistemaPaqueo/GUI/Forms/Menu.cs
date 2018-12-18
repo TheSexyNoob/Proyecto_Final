@@ -190,8 +190,9 @@ namespace GUI
             this.Btn_CreateBill.Name = "Btn_CreateBill";
             this.Btn_CreateBill.Size = new System.Drawing.Size(135, 47);
             this.Btn_CreateBill.TabIndex = 12;
-            this.Btn_CreateBill.Text = "Factura";
+            this.Btn_CreateBill.Text = "Leer Codigo";
             this.Btn_CreateBill.UseVisualStyleBackColor = false;
+            this.Btn_CreateBill.Click += new System.EventHandler(this.Btn_CreateBill_Click);
             // 
             // Btn_SearchBill
             // 
@@ -204,8 +205,9 @@ namespace GUI
             this.Btn_SearchBill.Name = "Btn_SearchBill";
             this.Btn_SearchBill.Size = new System.Drawing.Size(135, 47);
             this.Btn_SearchBill.TabIndex = 13;
-            this.Btn_SearchBill.Text = "Buscar Factura";
+            this.Btn_SearchBill.Text = "Generar Codigo Qr";
             this.Btn_SearchBill.UseVisualStyleBackColor = false;
+            this.Btn_SearchBill.Click += new System.EventHandler(this.Btn_SearchBill_Click);
             // 
             // Menu
             // 
@@ -271,6 +273,16 @@ namespace GUI
             CreateVehicule vehicule = new CreateVehicule();
             vehicule.Show();
 
+        }
+
+        private void Btn_CreateBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_SearchBill_Click(object sender, EventArgs e)
+        {
+            QRgenerator.show();
         }
     }
 }
