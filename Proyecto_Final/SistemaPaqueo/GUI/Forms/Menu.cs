@@ -11,6 +11,8 @@ using WindowsFormsApp3;
 using ParkingServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using GUI.Forms.User;
+using GUI.Forms.Vehicule;
+using GUI.Forms;
 
 namespace GUI
 {
@@ -40,15 +42,15 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.ParkingBtn = new System.Windows.Forms.Button();
             this.Reports = new System.Windows.Forms.Button();
-            this.EmployeeBtn = new System.Windows.Forms.Button();
+            this.Btn_CreateClients = new System.Windows.Forms.Button();
             this.UserLbl = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Btn_SearchUser = new System.Windows.Forms.Button();
+            this.Btn_SearchCompany = new System.Windows.Forms.Button();
+            this.Btn_CreateVehicule = new System.Windows.Forms.Button();
+            this.Btn_SearchVehicule = new System.Windows.Forms.Button();
+            this.Btn_CreateCompany = new System.Windows.Forms.Button();
+            this.Btn_CreateBill = new System.Windows.Forms.Button();
+            this.Btn_SearchBill = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ParkingBtn
@@ -73,7 +75,7 @@ namespace GUI
             this.Reports.FlatAppearance.BorderSize = 0;
             this.Reports.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reports.ForeColor = System.Drawing.Color.White;
-            this.Reports.Location = new System.Drawing.Point(80, 62);
+            this.Reports.Location = new System.Drawing.Point(471, 62);
             this.Reports.Name = "Reports";
             this.Reports.Size = new System.Drawing.Size(135, 47);
             this.Reports.TabIndex = 1;
@@ -81,20 +83,20 @@ namespace GUI
             this.Reports.UseVisualStyleBackColor = false;
             this.Reports.Click += new System.EventHandler(this.Reports_Click);
             // 
-            // EmployeeBtn
+            // Btn_CreateClients
             // 
-            this.EmployeeBtn.BackColor = System.Drawing.Color.Chocolate;
-            this.EmployeeBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.EmployeeBtn.FlatAppearance.BorderSize = 0;
-            this.EmployeeBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.EmployeeBtn.Location = new System.Drawing.Point(25, 225);
-            this.EmployeeBtn.Name = "EmployeeBtn";
-            this.EmployeeBtn.Size = new System.Drawing.Size(135, 47);
-            this.EmployeeBtn.TabIndex = 2;
-            this.EmployeeBtn.Text = "Crear Usuarios.";
-            this.EmployeeBtn.UseVisualStyleBackColor = false;
-            this.EmployeeBtn.Click += new System.EventHandler(this.EmployeeBtn_Click);
+            this.Btn_CreateClients.BackColor = System.Drawing.Color.Chocolate;
+            this.Btn_CreateClients.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Btn_CreateClients.FlatAppearance.BorderSize = 0;
+            this.Btn_CreateClients.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_CreateClients.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_CreateClients.Location = new System.Drawing.Point(25, 225);
+            this.Btn_CreateClients.Name = "Btn_CreateClients";
+            this.Btn_CreateClients.Size = new System.Drawing.Size(135, 47);
+            this.Btn_CreateClients.TabIndex = 2;
+            this.Btn_CreateClients.Text = "Crear Usuarios.";
+            this.Btn_CreateClients.UseVisualStyleBackColor = false;
+            this.Btn_CreateClients.Click += new System.EventHandler(this.EmployeeBtn_Click);
             // 
             // UserLbl
             // 
@@ -105,103 +107,105 @@ namespace GUI
             this.UserLbl.TabIndex = 3;
             this.UserLbl.Text = "User:";
             // 
-            // button4
+            // Btn_SearchUser
             // 
-            this.button4.BackColor = System.Drawing.Color.Chocolate;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(262, 225);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(135, 47);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Buscar Usuario.";
-            this.button4.UseVisualStyleBackColor = false;
+            this.Btn_SearchUser.BackColor = System.Drawing.Color.Chocolate;
+            this.Btn_SearchUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Btn_SearchUser.FlatAppearance.BorderSize = 0;
+            this.Btn_SearchUser.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_SearchUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_SearchUser.Location = new System.Drawing.Point(262, 225);
+            this.Btn_SearchUser.Name = "Btn_SearchUser";
+            this.Btn_SearchUser.Size = new System.Drawing.Size(135, 47);
+            this.Btn_SearchUser.TabIndex = 7;
+            this.Btn_SearchUser.Text = "Buscar Usuario.";
+            this.Btn_SearchUser.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // Btn_SearchCompany
             // 
-            this.button5.BackColor = System.Drawing.Color.Chocolate;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(262, 291);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(135, 47);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Buscar Empresa.";
-            this.button5.UseVisualStyleBackColor = false;
+            this.Btn_SearchCompany.BackColor = System.Drawing.Color.Chocolate;
+            this.Btn_SearchCompany.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Btn_SearchCompany.FlatAppearance.BorderSize = 0;
+            this.Btn_SearchCompany.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_SearchCompany.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_SearchCompany.Location = new System.Drawing.Point(262, 291);
+            this.Btn_SearchCompany.Name = "Btn_SearchCompany";
+            this.Btn_SearchCompany.Size = new System.Drawing.Size(135, 47);
+            this.Btn_SearchCompany.TabIndex = 8;
+            this.Btn_SearchCompany.Text = "Buscar Empresa.";
+            this.Btn_SearchCompany.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // Btn_CreateVehicule
             // 
-            this.button2.BackColor = System.Drawing.Color.Chocolate;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(27, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 47);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Crear Vehiculo";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Btn_CreateVehicule.BackColor = System.Drawing.Color.Chocolate;
+            this.Btn_CreateVehicule.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Btn_CreateVehicule.FlatAppearance.BorderSize = 0;
+            this.Btn_CreateVehicule.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_CreateVehicule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_CreateVehicule.Location = new System.Drawing.Point(27, 148);
+            this.Btn_CreateVehicule.Name = "Btn_CreateVehicule";
+            this.Btn_CreateVehicule.Size = new System.Drawing.Size(135, 47);
+            this.Btn_CreateVehicule.TabIndex = 9;
+            this.Btn_CreateVehicule.Text = "Crear Vehiculo";
+            this.Btn_CreateVehicule.UseVisualStyleBackColor = false;
+            this.Btn_CreateVehicule.Click += new System.EventHandler(this.Btn_CreateVehicule_Click);
             // 
-            // button3
+            // Btn_SearchVehicule
             // 
-            this.button3.BackColor = System.Drawing.Color.Chocolate;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(262, 148);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(135, 47);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Buscar Vehiculo.";
-            this.button3.UseVisualStyleBackColor = false;
+            this.Btn_SearchVehicule.BackColor = System.Drawing.Color.Chocolate;
+            this.Btn_SearchVehicule.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Btn_SearchVehicule.FlatAppearance.BorderSize = 0;
+            this.Btn_SearchVehicule.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_SearchVehicule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_SearchVehicule.Location = new System.Drawing.Point(262, 148);
+            this.Btn_SearchVehicule.Name = "Btn_SearchVehicule";
+            this.Btn_SearchVehicule.Size = new System.Drawing.Size(135, 47);
+            this.Btn_SearchVehicule.TabIndex = 10;
+            this.Btn_SearchVehicule.Text = "Buscar Vehiculo.";
+            this.Btn_SearchVehicule.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // Btn_CreateCompany
             // 
-            this.button1.BackColor = System.Drawing.Color.Chocolate;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(25, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 47);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Crear Empresa";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Btn_CreateCompany.BackColor = System.Drawing.Color.Chocolate;
+            this.Btn_CreateCompany.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Btn_CreateCompany.FlatAppearance.BorderSize = 0;
+            this.Btn_CreateCompany.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_CreateCompany.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_CreateCompany.Location = new System.Drawing.Point(25, 291);
+            this.Btn_CreateCompany.Name = "Btn_CreateCompany";
+            this.Btn_CreateCompany.Size = new System.Drawing.Size(135, 47);
+            this.Btn_CreateCompany.TabIndex = 11;
+            this.Btn_CreateCompany.Text = "Crear Empresa";
+            this.Btn_CreateCompany.UseVisualStyleBackColor = false;
+            this.Btn_CreateCompany.Click += new System.EventHandler(this.Btn_CreateCompany_Click);
             // 
-            // button6
+            // Btn_CreateBill
             // 
-            this.button6.BackColor = System.Drawing.Color.Chocolate;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Location = new System.Drawing.Point(471, 148);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(135, 47);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Factura";
-            this.button6.UseVisualStyleBackColor = false;
+            this.Btn_CreateBill.BackColor = System.Drawing.Color.Chocolate;
+            this.Btn_CreateBill.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Btn_CreateBill.FlatAppearance.BorderSize = 0;
+            this.Btn_CreateBill.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_CreateBill.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_CreateBill.Location = new System.Drawing.Point(471, 148);
+            this.Btn_CreateBill.Name = "Btn_CreateBill";
+            this.Btn_CreateBill.Size = new System.Drawing.Size(135, 47);
+            this.Btn_CreateBill.TabIndex = 12;
+            this.Btn_CreateBill.Text = "Factura";
+            this.Btn_CreateBill.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // Btn_SearchBill
             // 
-            this.button7.BackColor = System.Drawing.Color.Chocolate;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button7.Location = new System.Drawing.Point(471, 225);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(135, 47);
-            this.button7.TabIndex = 13;
-            this.button7.UseVisualStyleBackColor = false;
+            this.Btn_SearchBill.BackColor = System.Drawing.Color.Chocolate;
+            this.Btn_SearchBill.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Btn_SearchBill.FlatAppearance.BorderSize = 0;
+            this.Btn_SearchBill.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_SearchBill.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_SearchBill.Location = new System.Drawing.Point(471, 225);
+            this.Btn_SearchBill.Name = "Btn_SearchBill";
+            this.Btn_SearchBill.Size = new System.Drawing.Size(135, 47);
+            this.Btn_SearchBill.TabIndex = 13;
+            this.Btn_SearchBill.Text = "Buscar Factura";
+            this.Btn_SearchBill.UseVisualStyleBackColor = false;
             // 
             // Menu
             // 
@@ -211,15 +215,15 @@ namespace GUI
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(618, 361);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Btn_SearchBill);
+            this.Controls.Add(this.Btn_CreateBill);
+            this.Controls.Add(this.Btn_CreateCompany);
+            this.Controls.Add(this.Btn_SearchVehicule);
+            this.Controls.Add(this.Btn_CreateVehicule);
+            this.Controls.Add(this.Btn_SearchCompany);
+            this.Controls.Add(this.Btn_SearchUser);
             this.Controls.Add(this.UserLbl);
-            this.Controls.Add(this.EmployeeBtn);
+            this.Controls.Add(this.Btn_CreateClients);
             this.Controls.Add(this.Reports);
             this.Controls.Add(this.ParkingBtn);
             this.MaximumSize = new System.Drawing.Size(1024, 726);
@@ -255,8 +259,17 @@ namespace GUI
             reportMenu.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Btn_CreateCompany_Click(object sender, EventArgs e)
         {
+            CreateCompany company = new CreateCompany();
+            company.Show();
+        }
+
+        private void Btn_CreateVehicule_Click(object sender, EventArgs e)
+        {
+
+            CreateVehicule vehicule = new CreateVehicule();
+            vehicule.Show();
 
         }
     }

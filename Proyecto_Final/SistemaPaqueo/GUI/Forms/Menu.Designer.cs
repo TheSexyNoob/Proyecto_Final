@@ -22,14 +22,14 @@
 
         private System.Windows.Forms.Button ParkingBtn;
         private System.Windows.Forms.Button Reports;
-        private System.Windows.Forms.Button EmployeeBtn;
+        private System.Windows.Forms.Button Btn_CreateClients;
         private System.Windows.Forms.Label UserLbl;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Btn_SearchUser;
+        private System.Windows.Forms.Button Btn_SearchCompany;
+        private System.Windows.Forms.Button Btn_CreateVehicule;
+        private System.Windows.Forms.Button Btn_SearchVehicule;
+        private System.Windows.Forms.Button Btn_CreateCompany;
+        private System.Windows.Forms.Button Btn_CreateBill;
+        private System.Windows.Forms.Button Btn_SearchBill;
     }
 }

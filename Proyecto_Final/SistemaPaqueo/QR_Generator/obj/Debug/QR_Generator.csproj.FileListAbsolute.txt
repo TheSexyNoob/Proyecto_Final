@@ -37,16 +37,3 @@ C:\Users\dubilla\Source\Repos\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Gen
 C:\Users\dubilla\Source\Repos\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\QR_Generator.csproj.CopyComplete
 C:\Users\dubilla\Source\Repos\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\WindowsFormsApp2.exe
 C:\Users\dubilla\Source\Repos\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\WindowsFormsApp2.pdb
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\bin\Debug\WindowsFormsApp2.exe.config
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\bin\Debug\WindowsFormsApp2.exe
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\bin\Debug\WindowsFormsApp2.pdb
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\bin\Debug\Gma.QrCodeNet.Encoding.pdb
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\bin\Debug\Gma.QrCodeNet.Encoding.xml
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\QR_Generator.csprojAssemblyReference.cache
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\WindowsFormsApp2.Form1.resources
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\QR_Generator.csproj.GenerateResource.cache
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\QR_Generator.csproj.CoreCompileInputs.cache
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\QR_Generator.csproj.CopyComplete
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\WindowsFormsApp2.exe
-C:\Users\DARS\Documents\GitHub\Proyecto_Final\Proyecto_Final\SistemaPaqueo\QR_Generator\obj\Debug\WindowsFormsApp2.pdb
