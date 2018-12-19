@@ -282,7 +282,7 @@ namespace GUI
 
         private void Btn_SearchBill_Click(object sender, EventArgs e)
         {
-            QRgenerator.show();
+          //  QRgenerator.show();
         }
     }
 }
